@@ -1,7 +1,5 @@
 const { create } = require("domain");
-
 const fs = require('fs');
-
 
 const createFileTable = async( base = 1 ) => {
     try {
@@ -20,12 +18,6 @@ const createFileTable = async( base = 1 ) => {
     } catch( err ) {
         throw ( err )
     }
-        
-
-
-   
-
-    
 }
 
 module.exports = {

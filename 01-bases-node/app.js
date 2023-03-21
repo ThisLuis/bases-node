@@ -1,15 +1,25 @@
-
 const { createFileTable } = require('./helpers/multiplicar') ;
+const argv = require('yargs').argv;
+
 
 console.clear();
 
-const base = 5;
+console.log(process.argv);
+console.log(argv);
 
-createFileTable( base )
-    .then( nameFile => console.log(nameFile, ' fue creado con exito'))
-    .catch( err => console.log( err ));
+console.log('base: yargs', argv.base);
+
+/* ====================SIN YARGS=================*/
+// const [ , , arg3 = 'base=5' ] = process.argv;
+// const [ , base = 5] = arg3.split('=');
+/* ==============================================*/
 
 
+// createFileTable( base )
+//     .then( nameFile => console.log(nameFile, ' fue creado con exito'))
+//     .catch( err => console.log( err ));
+
+/* ==================teFile===============================*/
 // fs.writeFile(`tabla-${ base }.txt`, output, ( err ) => {
 //     if ( err ) throw err;
 //     console.log(`tabla-${ base }.txt fue creado con exito`);
