@@ -14,7 +14,7 @@ console.clear();
 /* ==============================================*/
 
 
-createFileTable( argv.base, argv.list )
+createFileTable( argv.base, argv.list, argv.until )
     .then( nameFile => console.log(nameFile.rainbow, ' fue creado con exito'))
     .catch( err => console.log( err ));
 
