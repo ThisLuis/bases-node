@@ -1,5 +1,6 @@
 const { create } = require("domain");
 const fs = require('fs');
+const colors = require('colors');
 
 const createFileTable = async( base = 1, listar ) => {
     try {
@@ -7,14 +8,14 @@ const createFileTable = async( base = 1, listar ) => {
 
         let output = '';
         for(let i = 1; i <= 10; i++) {
-            output += `${base} x ${i} = ${ base * i}\n`;
+            output += `${base} ${ 'x'.cyan } ${i} ${ '='.cyan } ${ base * i}\n`;
         }
 
         if( listar )
         {
-            console.log('========================');
-            console.log('     Tabla del ', base );
-            console.log('========================');
+            console.log('========================'.cyan);
+            console.log(`     ${ 'Tabla del'.red } `, colors.red(base) );
+            console.log('========================'.cyan);
             console.log(output);
         } else {
             fs.writeFileSync(`table-${ base }.txt`, output);
